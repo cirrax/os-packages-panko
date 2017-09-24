@@ -1,0 +1,4 @@
+etc/panko
+var/lib/panko
+var/log/panko
+

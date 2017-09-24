@@ -1,0 +1,9 @@
+/var/log/panko/*.log {
+    daily
+    missingok
+    compress
+    delaycompress
+    notifempty
+    copytruncate
+}
+

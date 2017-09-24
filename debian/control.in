@@ -1,0 +1,62 @@
+Source: venv-panko
+Section: python
+Priority: optional
+Maintainer: Benedikt Trefzer <benedikt.trefzer@cirrax.com>
+Build-Depends: debhelper (>= 9),
+               python,
+               python-sphinx,
+               dh-exec,
+               dh-virtualenv, 
+               dh-python,
+               dh-systemd,
+               dh-sysuser,
+               git,
+               python-setuptools,
+               python-wheel,
+               libpython2.7-dev,
+               os-requirements-__MAJREL__-pipcache,
+               os-requirements-__MAJREL__-builddep,
+Standards-Version: 3.9.8
+Homepage: https://github.com/openstack/panko
+
+Package: venv-panko
+Architecture: any
+Pre-Depends: dpkg (>= 1.16.1), python2.7 ${misc:Pre-Depends}
+Depends:       ${python:Depends},
+               ${misc:Depends},
+               ${shlibs:Depends},
+               python,
+               os-requirements-__MAJREL__-dep
+Description: Event storage dispatcher for Ceilometer (Python 2) - virtualenv files
+ Event storage dispatcher for Ceilometer.
+ .
+ This package contains the Python virtual environment
+
+Package: python-panko
+Architecture: all
+Depends: venv-panko (=${binary:Version}),
+         ${misc:Depends},
+Description: Event storage dispatcher for Ceilometer (Python 2)
+ Event storage dispatcher for Ceilometer.
+ .
+ This package installs the library for Python 2.7
+
+Package: panko-common
+Architecture: all
+Depends: venv-panko (=${binary:Version}),
+         python-panko (=${binary:Version}),
+         ${misc:Depends},
+Description: panko common files
+ Event storage dispatcher for Ceilometer.
+ .
+ This package contains files that are needed for all parts of ceilometer
+
+Package: panko-api
+Architecture: all
+Depends: venv-panko (=${binary:Version}),
+         panko-common (=${binary:Version}),
+         ${misc:Depends},
+Description: Event storage dispatcher for Ceilometer (Python 2)
+ Event storage dispatcher for Ceilometer.
+ .
+ This package container the api service

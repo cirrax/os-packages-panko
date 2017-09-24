@@ -1,0 +1,5 @@
+#! /usr/bin/dh-exec
+
+etc/panko/api_paste.ini etc/panko/
+etc/panko/policy.json   etc/panko/
+

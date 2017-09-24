@@ -1,0 +1,22 @@
+#DEBHELPER#
+#
+# Needs trigger to include the following vars:
+# dh_venv_install_dir and dh_venv_package
+#
+
+dh_venv_bytecode_update() {
+     echo "building bytecode in ${dh_venv_install_dir}"
+     ${dh_venv_install_dir}/bin/python -m compileall -q ${dh_venv_install_dir}
+}
+
+case "$1" in
+    configure|reconfigure)
+        dh_venv_bytecode_update
+        ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure|triggered)
+        ;;
+
+    *)
+        ;;
+esac

@@ -1,0 +1,30 @@
+#! /usr/bin/dh-exec
+
+# we are using dh_virtualenv, thats what we want !
+venv-panko: package-installs-python-bytecode  ${VENV}/*
+venv-panko: unstripped-binary-or-object       ${VENV}/* 
+venv-panko: package-installs-ieee-data        ${VENV}/*
+venv-panko: extra-license-file                ${VENV}/*
+venv-panko: backup-file-in-package            ${VENV}/*
+venv-panko: privacy-breach-uses-embedded-file ${VENV}/*
+venv-panko: embedded-javascript-library       ${VENV}/*
+venv-panko: hardening-no-relro                ${VENV}/*
+venv-panko: executable-not-elf-or-script      ${VENV}/*
+
+venv-panko: package-installs-python-bytecode  ${VENV}/*
+
+venv-panko: spelling-error-in-binary          ${VENV}/*
+
+venv-panko: wrong-path-for-interpreter        ${VENV}/bin/* (#!/${VENV}/bin/python2 != /usr/bin/python2)
+venv-panko: wrong-path-for-interpreter        ${VENV}/bin/* (#!/${VENV}/bin/python != /usr/bin/python)
+
+venv-panko: hardening-no-bindnow              ${VENV}/*
+
+venv-panko: script-not-executable             ${VENV}/lib/python2.7/site-packages/neutronclient/tests/functional/hooks/gate_hook.sh
+
+venv-panko: jar-not-in-usr-share              ${VENV}/lib/python2.7/site-packages/saharaclient/*
+
+venv-panko: embedded-library                  ${VENV}/lib/python2.7/site-packages/lxml/*
+
+venv-panko: package-has-unnecessary-activation-of-ldconfig-trigger
+

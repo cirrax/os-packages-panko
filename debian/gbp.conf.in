@@ -1,0 +1,8 @@
+
+[DEFAULT]
+pristine-tar = False
+upstream-tag = %(version)s
+# branches to use
+upstream-branch = origin/stable/__MAJREL__
+debian-branch = debian/__DISTRI__-__MAJREL__
+

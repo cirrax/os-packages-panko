@@ -1,0 +1,8 @@
+
+# we do not care about NMU ...
+venv-panko source: changelog-should-mention-nmu
+venv-panko source: source-nmu-has-incorrect-version-number
+
+venv-panko source: not-binnmuable-all-depends-any
+
+venv-panko source: dh-exec-subst-unknown-variable debian/* VENV
