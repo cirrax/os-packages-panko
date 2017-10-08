@@ -49,6 +49,7 @@ override_dh_virtualenv:
 	mkdir -p $(VENVINST)/etc/panko
 	(cd $(VENVINST); ./bin/python -B bin/oslo-config-generator --config-file $(CURDIR)/etc/panko/panko-config-generator.conf)
 	cp $(VENVINST)/etc/panko/panko.conf debian/panko-common/etc/panko/panko.conf
+	cp -r /usr/share/os-requirements-$(MAJREL)-pipcache/helpers $(VENVINST)/
 	pyclean $(VENVINST)
 
 override_dh_clean:

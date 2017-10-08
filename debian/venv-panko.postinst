@@ -6,7 +6,13 @@
 
 dh_venv_bytecode_update() {
      echo "building bytecode in ${dh_venv_install_dir}"
-     ${dh_venv_install_dir}/bin/python -m compileall -q ${dh_venv_install_dir}
+     if [ -f ${dh_venv_install_dir}/exclude-file-from-precompile-python2.sed ]; then
+        find ${dh_venv_install_dir} -regextype posix-egrep -regex '.*\.py$'| \
+              sed -f ${dh_venv_install_dir}/exclude-file-from-precompile-python2.sed | \
+              ${dh_venv_install_dir}/bin/python -m compileall -q -i -
+     else
+        ${dh_venv_install_dir}/bin/python -m compileall -q ${dh_venv_install_dir}
+     fi
 }
 
 case "$1" in
