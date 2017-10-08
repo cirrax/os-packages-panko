@@ -2,7 +2,7 @@ Source: venv-panko
 Section: python
 Priority: optional
 Maintainer: Benedikt Trefzer <benedikt.trefzer@cirrax.com>
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 10),
                python,
                python-sphinx,
                dh-exec,
