@@ -1,4 +1,4 @@
 etc/panko
 var/lib/panko
 var/log/panko
-
+usr/share/panko-common

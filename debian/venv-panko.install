@@ -1,0 +1,2 @@
+#!/usr/bin/dh-exec
+panko/api/app.wsgi ${VENV}/lib/python2.7/site-packages/panko/api

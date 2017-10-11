@@ -1,0 +1,4 @@
+#! /usr/bin/dh-exec
+/${VENV}/bin/panko-dbsync                               /usr/bin/panko-dbsync
+/${VENV}/bin/panko-expirer                              /usr/bin/panko-expirer
+/${VENV}/lib/python2.7/site-packages/panko/api/app.wsgi /usr/share/panko-common/app.wsgi
