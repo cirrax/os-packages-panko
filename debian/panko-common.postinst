@@ -1,0 +1,5 @@
+#DEBHELPER#
+#
+#
+chown panko:panko /var/log/panko
+chown -R panko:panko /var/lib/panko
